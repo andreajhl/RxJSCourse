@@ -1,0 +1,11 @@
+import { interval, concat, of } from 'rxjs';
+import { take } from 'rxjs/operators';
+
+const interval$ = interval(1000);
+
+//return observable
+concat(
+  interval$.pipe( take(3) ),
+  interval$.pipe( take(2) ),
+  of(1)
+).subscribe( console.log  );
