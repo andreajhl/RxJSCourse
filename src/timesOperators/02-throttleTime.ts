@@ -19,6 +19,6 @@ input$.pipe(
     trailing: true
   }),
   tap( console.log ),
-  map( ({ target } ) => target.value),
+  map( ({ target } ) => target['value']),
   distinctUntilChanged()
 ).subscribe( console.log );
